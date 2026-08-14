@@ -1,0 +1,22 @@
+{
+  "name": "chargegrid-intelligence",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Plataforma web para gestão inteligente e operação de estações ChargeGrid.",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/preview.mjs",
+    "test": "node --test",
+    "check": "node --check src/core/chargeGridCore.js"
+  },
+  "dependencies": {
+    "lucide-react": "0.564.0",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  }
+}
