@@ -182,8 +182,8 @@ export class ChargeGridCore {
     const payload = {
       protocol: "OCPP-like",
       messageType: "BootNotification",
-      chargePointVendor: "ChargeGrid Intelligence",
-      chargePointModel: "CG-Smart-Station",
+      chargePointVendor: "wecharge",
+      chargePointModel: "WC-Smart-Station",
       firmwareVersion: "3.0.0-web",
       timestamp: nowIso(),
       status: "Accepted",
@@ -270,7 +270,7 @@ export class ChargeGridCore {
     const payload = {
       protocol: "OCPP-like",
       messageType: "DataTransfer",
-      vendorId: "ChargeGrid.Demo.VehicleIdentification",
+      vendorId: "wecharge.Demo.VehicleIdentification",
       transactionId: session.sessionId,
       data: {
         model: session.vehicle,
@@ -795,7 +795,7 @@ export class ChargeGridCore {
       timeStyle: "medium",
     }).format(new Date());
     const lines = [
-      "RELATÓRIO OPERACIONAL · CHARGEGRID INTELLIGENCE",
+      "RELATÓRIO OPERACIONAL · wecharge",
       "=".repeat(68),
       `Gerado em: ${generatedAt}`,
       `Limite do eletroposto: ${this.siteLimitKw.toFixed(1)} kW`,

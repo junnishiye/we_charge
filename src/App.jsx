@@ -56,8 +56,8 @@ const STORAGE_KEY = "chargegrid-intelligence-state-v3";
 
 const stationCatalog = [
   {
-    id: "CG-1024",
-    name: "ChargeGrid Paulista",
+    id: "WC-1024",
+    name: "wecharge Paulista",
     address: "Av. Paulista, 1.578 · Bela Vista",
     distance: "0,8 km",
     available: 4,
@@ -67,7 +67,7 @@ const stationCatalog = [
     tags: ["CCS2", "24 horas"],
   },
   {
-    id: "CG-0841",
+    id: "WC-0841",
     name: "Shopping Eldorado",
     address: "Av. Rebouças, 3.970 · Pinheiros",
     distance: "2,4 km",
@@ -78,8 +78,8 @@ const stationCatalog = [
     tags: ["CCS2", "Estacionamento"],
   },
   {
-    id: "CG-0732",
-    name: "ChargeGrid Moema",
+    id: "WC-0732",
+    name: "wecharge Moema",
     address: "Al. dos Maracatins, 780 · Moema",
     distance: "3,1 km",
     available: 5,
@@ -173,8 +173,7 @@ function Brand({ inverse = false, compact = false }) {
         <Zap size={compact ? 21 : 25} strokeWidth={2.4} />
       </span>
       <span className="brand__copy">
-        <strong>ChargeGrid</strong>
-        {!compact && <small>Intelligence</small>}
+        <strong>wecharge</strong>
       </span>
     </div>
   );
@@ -235,7 +234,7 @@ function ModeSelector({ onSelect }) {
             </span>
             <span className="mode-card__body">
               <small>Gestão inteligente</small>
-              <strong>Aplicativo ChargeGrid</strong>
+              <strong>Aplicativo wecharge</strong>
               <span>Monitore sessões, demanda, conectores, protocolos e resultados da operação.</span>
             </span>
             <span className="mini-dashboard" aria-hidden="true">
@@ -258,7 +257,7 @@ function ModeSelector({ onSelect }) {
                 <TerminalSquare size={25} />
               </span>
               <StatusPill tone="success" icon={Wifi}>
-                CG-1024 online
+                WC-1024 online
               </StatusPill>
             </span>
             <span className="mode-card__body">
@@ -289,7 +288,7 @@ function ModeSelector({ onSelect }) {
       </section>
 
       <footer className="gateway-footer">
-        <span>ChargeGrid Intelligence · Sprint 2</span>
+        <span>wecharge · Sprint 2</span>
         <span>Energia conectada. Operação inteligente.</span>
       </footer>
     </main>
@@ -432,7 +431,7 @@ function DashboardApp({ core, mutate, onExit }) {
               )}
             </div>
             <button className="profile-button">
-              <span>CG</span>
+              <span>WC</span>
               <div><strong>Equipe 3</strong><small>Operador</small></div>
               <ChevronDown size={15} />
             </button>
@@ -442,7 +441,7 @@ function DashboardApp({ core, mutate, onExit }) {
         <main className="app-main">
           <div className="page-heading">
             <div>
-              <p className="page-kicker"><span className="live-dot" /> Centro operacional · CG São Paulo</p>
+              <p className="page-kicker"><span className="live-dot" /> Centro operacional · wecharge São Paulo</p>
               <h1>{title}</h1>
               <span>{description}</span>
             </div>
@@ -539,7 +538,7 @@ function OverviewPage({ core, mutate, onNavigate, onNewSession, onInspect }) {
           <StatusPill tone="success" icon={Sparkles}>Smart charging habilitado</StatusPill>
           <h2>Operação sob controle.</h2>
           <p>
-            A ChargeGrid distribui energia automaticamente entre os conectores e protege o limite do eletroposto.
+            A wecharge distribui energia automaticamente entre os conectores e protege o limite do eletroposto.
           </p>
           <div className="overview-banner__actions">
             <button className="button button--light" onClick={onNewSession}>Iniciar recarga <ArrowRight size={17} /></button>
@@ -656,7 +655,7 @@ function OverviewPage({ core, mutate, onNavigate, onNewSession, onInspect }) {
         <aside className="dashboard-rail">
           <article className="panel configuration-card">
             <div className="panel-heading panel-heading--compact">
-              <div><h3>Configuração atual</h3><p>CG São Paulo · CG-1024</p></div>
+              <div><h3>Configuração atual</h3><p>wecharge São Paulo · WC-1024</p></div>
               <button className="icon-button" onClick={() => onNavigate("site")} aria-label="Editar configuração"><Settings2 size={17} /></button>
             </div>
             <dl className="configuration-list">
@@ -876,8 +875,8 @@ function ProtocolsPage({ core, mutate }) {
 
 function ReportsPage({ core }) {
   const metrics = core.metrics();
-  const downloadReport = () => downloadFile("relatorio-chargegrid.txt", core.generateReport());
-  const downloadJson = () => downloadFile("dados-chargegrid.json", JSON.stringify(core.toJSON(), null, 2), "application/json");
+  const downloadReport = () => downloadFile("relatorio-wecharge.txt", core.generateReport());
+  const downloadJson = () => downloadFile("dados-wecharge.json", JSON.stringify(core.toJSON(), null, 2), "application/json");
   return (
     <div className="reports-layout">
       <section className="report-hero">
@@ -919,7 +918,7 @@ function HelpPage({ core, mutate, onNavigate }) {
         </div>
       </section>
       <aside className="help-side">
-        <section className="support-card"><span><Headphones size={25} /></span><div><small>Precisa de ajuda?</small><strong>Suporte ChargeGrid</strong><p>equipe3.1ccpq@gmail.com</p></div></section>
+        <section className="support-card"><span><Headphones size={25} /></span><div><small>Precisa de ajuda?</small><strong>Suporte wecharge</strong><p>equipe3.1ccpq@gmail.com</p></div></section>
         <section className="panel system-info"><h3>Sobre a simulação</h3><p>O motor replica as regras de balanceamento, tarifação e telemetria do protótipo original.</p><dl><div><dt>Versão</dt><dd>3.0 web</dd></div><div><dt>Armazenamento</dt><dd>Local</dd></div><div><dt>Mensagens</dt><dd>{core.protocolMessages.length}</dd></div></dl></section>
       </aside>
       <section className="panel math-guide">
@@ -931,7 +930,7 @@ function HelpPage({ core, mutate, onNavigate }) {
           <article><span><Gauge size={20} /></span><div><small>Balanceamento</small><strong>peso = kW solicitado × prioridade</strong><p>O limite do eletroposto é dividido proporcionalmente, sem superar o pedido do carro.</p></div></article>
         </div>
         <div className="tariff-rule-chips"><span>Base R$ 0,805</span><span>Pico +20%</span><span>Demanda +8% ou +15%</span><span>Assinante −10%</span><span>Frota −5%</span><span>Acima de 11 kW +10%</span></div>
-        <div className="math-guide-note"><Info size={18} /><p><strong>Perfis não são mensalidades.</strong><span>Comum, Visitante, Assinante e Frota controlam prioridade e desconto. Planos Free/Plus/Premium e cobrança mensal não fazem parte do motor atual. O Saldo ChargeGrid é crédito digital no app, não cartão físico.</span></p></div>
+        <div className="math-guide-note"><Info size={18} /><p><strong>Perfis não são mensalidades.</strong><span>Comum, Visitante, Assinante e Frota controlam prioridade e desconto. Planos Free/Plus/Premium e cobrança mensal não fazem parte do motor atual. O Saldo wecharge é crédito digital no app, não cartão físico.</span></p></div>
       </section>
     </div>
   );
@@ -1210,7 +1209,7 @@ function StationTerminal({ core, mutate, onExit, onOpenApp }) {
       <div className="station-ambient station-ambient--right" />
       <header className="station-header">
         <Brand inverse />
-        <div className="station-header__center"><StatusPill tone="success" icon={Wifi}>Estação online</StatusPill><span>CG-1024 · Av. Paulista</span></div>
+        <div className="station-header__center"><StatusPill tone="success" icon={Wifi}>Estação online</StatusPill><span>WC-1024 · Av. Paulista</span></div>
         <div className="station-header__actions"><button onClick={() => setTechnicalOpen(true)}><Settings2 size={17} /> Painel técnico</button><button onClick={onExit}><RefreshCw size={17} /> Trocar ambiente</button></div>
       </header>
 
@@ -1231,7 +1230,7 @@ function StationTerminal({ core, mutate, onExit, onOpenApp }) {
           </aside>
 
           <section className="station-content">
-            <div className="station-content__meta"><span><Clock3 size={17} /> {clock.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })}</span><span>ID Estação: <strong>CG-1024</strong></span></div>
+            <div className="station-content__meta"><span><Clock3 size={17} /> {clock.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })}</span><span>ID Estação: <strong>WC-1024</strong></span></div>
             {step === 1 && <ConnectStep core={core} connectorId={connectorId} onSelectConnector={selectConnector} onBack={onExit} onContinue={handleConnectionAction} detectionStatus={detectionStatus} vehicle={identifiedVehicle} preview={chargePreview} />}
             {step === 2 && (
               <PaymentStep
@@ -1361,7 +1360,7 @@ function PaymentStep({ tariff, tariffBreakdown, targetMode, setTargetMode, money
         <div className="payment-column">
           <div className="method-selector">
             <button className={method === "card" ? "is-active" : ""} onClick={() => setMethod("card")} disabled={status !== "idle"}><CreditCard size={19} /><span><strong>Cartão bancário</strong><small>Crédito ou débito · visitante</small></span><i>{method === "card" && <Check size={13} />}</i></button>
-            <button className={method === "wallet" ? "is-active" : ""} onClick={() => setMethod("wallet")} disabled={status !== "idle"}><Smartphone size={19} /><span><strong>Saldo ChargeGrid</strong><small>Créditos digitais da conta</small></span><i>{method === "wallet" && <Check size={13} />}</i></button>
+            <button className={method === "wallet" ? "is-active" : ""} onClick={() => setMethod("wallet")} disabled={status !== "idle"}><Smartphone size={19} /><span><strong>Saldo wecharge</strong><small>Créditos digitais da conta</small></span><i>{method === "wallet" && <Check size={13} />}</i></button>
           </div>
           {method === "card" && <button className={`contactless-pad is-${status}`} onClick={onAuthorize} disabled={status !== "idle" || !targetValid}>
             {status === "idle" && method === "card" && <><span><Nfc size={44} /></span><strong>Aproxime ou insira seu cartão</strong><small>Toque aqui para simular a autorização bancária</small></>}
@@ -1471,7 +1470,7 @@ function ChargingStep({ session, core, onAdvance, onFinish, onSimulateProtocol }
 }
 
 function ReceiptStep({ session, onNew, onApp }) {
-  const downloadReceipt = () => downloadFile(`recibo-${session.sessionId}.txt`, [`RECIBO CHARGEGRID INTELLIGENCE`, `Sessão: ${session.sessionId}`, `Veículo: ${session.vehicle}`, `Conector: ${session.connectorId} · ${session.connectorType ?? "não informado"}`, `Energia: ${number.format(session.energyKwh)} kWh`, `Duração: ${formatDuration(session.elapsedMinutes)}`, `Tarifa: R$ ${number.format(session.currentTariff)}/kWh`, `Total: ${formatCurrency(session.totalCost)}`, `Motivo: ${session.controlReason}`].join("\n"));
+  const downloadReceipt = () => downloadFile(`recibo-${session.sessionId}.txt`, [`RECIBO wecharge`, `Sessão: ${session.sessionId}`, `Veículo: ${session.vehicle}`, `Conector: ${session.connectorId} · ${session.connectorType ?? "não informado"}`, `Energia: ${number.format(session.energyKwh)} kWh`, `Duração: ${formatDuration(session.elapsedMinutes)}`, `Tarifa: R$ ${number.format(session.currentTariff)}/kWh`, `Total: ${formatCurrency(session.totalCost)}`, `Motivo: ${session.controlReason}`].join("\n"));
   const completionMessage = {
     battery_full: "A bateria atingiu 100% antes do teto autorizado. Foi cobrada somente a energia entregue.",
     money_target: "A recarga encerrou ao atingir o valor máximo autorizado.",
@@ -1490,7 +1489,7 @@ function ReceiptStep({ session, onNew, onApp }) {
         <div className="receipt-green"><Leaf size={19} /><p><strong>Energia limpa em movimento</strong><span>Esta sessão utilizou energia de fonte 100% renovável.</span></p></div>
       </div>
       <footer className="station-footer-actions"><button className="station-button station-button--secondary" onClick={downloadReceipt}><Download size={20} /> Baixar recibo</button><button className="station-button station-button--primary" onClick={onNew}>Nova recarga <ArrowRight size={20} /></button></footer>
-      <button className="receipt-app-link" onClick={onApp}><Smartphone size={17} /> Acompanhar no Aplicativo ChargeGrid</button>
+      <button className="receipt-app-link" onClick={onApp}><Smartphone size={17} /> Acompanhar no Aplicativo wecharge</button>
     </div>
   );
 }
@@ -1504,7 +1503,7 @@ function TechnicalDrawer({ core, mutate, onClose }) {
         <header><div><span>Painel reservado</span><h2 id="technical-title">Operação técnica</h2></div><button className="icon-button" onClick={onClose}><X size={20} /></button></header>
         <div className="drawer-tabs"><button className={tab === "summary" ? "is-active" : ""} onClick={() => setTab("summary")}>Resumo</button><button className={tab === "sessions" ? "is-active" : ""} onClick={() => setTab("sessions")}>Sessões</button><button className={tab === "events" ? "is-active" : ""} onClick={() => setTab("events")}>Eventos</button></div>
         <div className="drawer-body">
-          {tab === "summary" && <><div className="drawer-metrics"><div><span>Ativas</span><strong>{metrics.activeCount}</strong></div><div><span>Demanda</span><strong>{Math.round(metrics.demandRatio * 100)}%</strong></div><div><span>Liberado</span><strong>{formatNumber(metrics.allocatedKw)} kW</strong></div><div><span>Energia</span><strong>{formatNumber(metrics.energyKwh)} kWh</strong></div></div><div className="drawer-actions"><h3>Controles da demonstração</h3><button onClick={() => mutate((engine) => engine.createAutoScenario(), "Cenário automático preparado.")}><Sparkles size={18} /><span><strong>Cenário automático</strong><small>Cria as quatro sessões da Sprint 2</small></span><ChevronRight size={17} /></button><button onClick={() => mutate((engine) => engine.advanceTime(15), "Simulação avançada em 15 minutos.")}><Timer size={18} /><span><strong>Avançar 15 minutos</strong><small>Atualiza energia, custo e medição</small></span><ChevronRight size={17} /></button><button onClick={() => mutate((engine) => engine.simulateProtocolExchange(), "Troca OCPP/MODBUS simulada.")}><Radio size={18} /><span><strong>Simular protocolos</strong><small>Gera mensagens para sessões ativas</small></span><ChevronRight size={17} /></button><button onClick={() => downloadFile("relatorio-chargegrid.txt", core.generateReport())}><Download size={18} /><span><strong>Exportar relatório</strong><small>Baixar resumo operacional em .txt</small></span><ChevronRight size={17} /></button></div><div className="drawer-disclaimer"><Info size={17} /><p><strong>Ambiente simulado</strong><span>Nenhum comando é enviado a carregadores reais.</span></p></div></>}
+          {tab === "summary" && <><div className="drawer-metrics"><div><span>Ativas</span><strong>{metrics.activeCount}</strong></div><div><span>Demanda</span><strong>{Math.round(metrics.demandRatio * 100)}%</strong></div><div><span>Liberado</span><strong>{formatNumber(metrics.allocatedKw)} kW</strong></div><div><span>Energia</span><strong>{formatNumber(metrics.energyKwh)} kWh</strong></div></div><div className="drawer-actions"><h3>Controles da demonstração</h3><button onClick={() => mutate((engine) => engine.createAutoScenario(), "Cenário automático preparado.")}><Sparkles size={18} /><span><strong>Cenário automático</strong><small>Cria as quatro sessões da Sprint 2</small></span><ChevronRight size={17} /></button><button onClick={() => mutate((engine) => engine.advanceTime(15), "Simulação avançada em 15 minutos.")}><Timer size={18} /><span><strong>Avançar 15 minutos</strong><small>Atualiza energia, custo e medição</small></span><ChevronRight size={17} /></button><button onClick={() => mutate((engine) => engine.simulateProtocolExchange(), "Troca OCPP/MODBUS simulada.")}><Radio size={18} /><span><strong>Simular protocolos</strong><small>Gera mensagens para sessões ativas</small></span><ChevronRight size={17} /></button><button onClick={() => downloadFile("relatorio-wecharge.txt", core.generateReport())}><Download size={18} /><span><strong>Exportar relatório</strong><small>Baixar resumo operacional em .txt</small></span><ChevronRight size={17} /></button></div><div className="drawer-disclaimer"><Info size={17} /><p><strong>Ambiente simulado</strong><span>Nenhum comando é enviado a carregadores reais.</span></p></div></>}
           {tab === "sessions" && <div className="drawer-session-list">{core.sessions.length ? [...core.sessions].reverse().map((session) => <article key={session.sessionId}><span className={`drawer-session-icon ${session.status === "Ativa" ? "is-active" : ""}`}><PlugZap size={17} /></span><p><strong>{session.sessionId} · Conector {session.connectorId}</strong><small>{session.vehicle}</small></p><div><strong>{formatNumber(session.energyKwh)} kWh</strong><StatusPill tone={session.status === "Ativa" ? "success" : "neutral"}>{session.status}</StatusPill></div>{session.status === "Ativa" && <button className="icon-button" onClick={() => mutate((engine) => engine.finishSession(session.sessionId), `${session.sessionId} finalizada.`)} aria-label="Finalizar sessão"><X size={17} /></button>}</article>) : <EmptyState title="Nenhuma sessão" description="Inicie uma recarga ou carregue o cenário automático." />}</div>}
           {tab === "events" && <div className="drawer-event-list">{core.logs.slice(-30).reverse().map((log, index) => <div key={log.id}><span className={index === 0 ? "is-current" : ""} /><p>{log.message}<small>{log.time}</small></p></div>)}</div>}
         </div>
